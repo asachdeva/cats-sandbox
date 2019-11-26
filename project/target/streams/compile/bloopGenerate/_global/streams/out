@@ -1,0 +1,4 @@
+[debug] [cats-sandbox-build] Classpath dependencies List()
+[debug] [cats-sandbox-build] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'cats-sandbox-build' to '/home/asachdeva/work/cats-sandbox/project/.bloop/cats-sandbox-build.json'
+[success] Generated .bloop/cats-sandbox-build.json

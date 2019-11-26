@@ -1,0 +1,665 @@
+INFO  time: initialize in 0.2s
+INFO  Selected port 5031
+Nov 12, 2019 3:35:25 PM org.xnio.Xnio <clinit>
+INFO: XNIO version 3.6.5.Final
+Nov 12, 2019 3:35:25 PM org.xnio.nio.NioXnio <clinit>
+INFO: XNIO NIO Implementation Version 3.6.5.Final
+Nov 12, 2019 3:35:25 PM org.jboss.threads.Version <clinit>
+INFO: JBoss Threads version 2.3.0.Beta2
+WARN  no build target: /home/asachdeva/work/cats-sandbox/build.sbt
+INFO  Started Metals http server at http://127.0.0.1:5031
+INFO  running '/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /tmp/metals7480517383536447036/sbt-launch.jar metalsEnable bloopInstall'
+INFO  [info] Loading settings for project global-plugins from metals.sbt ...
+INFO  [info] Loading global plugins from /home/asachdeva/.sbt/1.0/plugins
+INFO  [info] Loading settings for project cats-sandbox-build from plugins.sbt ...
+INFO  [info] Loading project definition from /home/asachdeva/work/cats-sandbox/project
+INFO  [success] Generated .bloop/cats-sandbox-build.json
+INFO  [success] Total time: 0 s, completed Nov 12, 2019 3:35:41 PM
+INFO  [info] Loading settings for project cats-sandbox from build.sbt ...
+INFO  [info] Set current project to cats-sandbox (in build file:/home/asachdeva/work/cats-sandbox/)
+INFO  [info] Set current project to cats-sandbox (in build file:/home/asachdeva/work/cats-sandbox/)
+INFO  [info] semanticdb-scalac is enabled
+INFO  [success] Generated .bloop/cats-sandbox.json
+INFO  [success] Generated .bloop/cats-sandbox-test.json
+INFO  [success] Total time: 6 s, completed Nov 12, 2019 3:35:48 PM
+INFO  time: ran 'sbt bloopInstall' in 11s
+INFO  build tool exit: 0
+INFO  running embedded 'bloop bsp --protocol local --socket /tmp/bsp5244955053707983547/1f9vs8xk4gcua.socket'
+The server is listening for incoming connections at local:///tmp/bsp5244955053707983547/1f9vs8xk4gcua.socket...
+Accepted incoming BSP client connection at local:///tmp/bsp5244955053707983547/1f9vs8xk4gcua.socket
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/asachdeva/.cache/metals/bsp.trace.json
+request received: build/initialize
+INFO  time: connected to build server in 1.77s
+BSP initialization handshake complete.
+WARN  Could not find java sources in None. Java symbols will not be available.
+INFO  time: indexed workspace in 0.74s
+WARN  no build target: /home/asachdeva/work/cats-sandbox/build.sbt
+Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.13.1/0.7.6/mtags_2.13.1-0.7.6.pom
+Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.13.1/0.7.6/mtags_2.13.1-0.7.6.pom.sha1
+INFO  compiling cats-sandbox (1 scala source)
+Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.13.1/0.7.6/mtags_2.13.1-0.7.6.pom
+Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.13.1/0.7.6/mtags_2.13.1-0.7.6.pom.sha1
+Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.13.1/0.7.6/
+Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.13.1/0.7.6/
+INFO  Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.1. Compiling...
+bad option: '-Ypartial-unification'
+Nov 12, 2019 3:52:10 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: requirement failed: List(-Ypartial-unification, -Yrangepos, -Xplugin-require:semanticdb, -Xplugin:/home/asachdeva/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/kind-projector_2.13/0.10.3/kind-projector_2.13-0.10.3.jar)
+java.lang.IllegalArgumentException: requirement failed: List(-Ypartial-unification, -Yrangepos, -Xplugin-require:semanticdb, -Xplugin:/home/asachdeva/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/kind-projector_2.13/0.10.3/kind-projector_2.13-0.10.3.jar)
+	at scala.Predef$.require(Predef.scala:340)
+
+8 warnings found
+INFO    Compilation completed in 6.202s.
+ERROR bad option: '-Ypartial-unification'
+INFO  time: compiled cats-sandbox in 7.45s
+ERROR Failed to compile 'cats-sandbox'
+WARN  no build target: /home/asachdeva/work/cats-sandbox/build.sbt
+INFO  running '/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /tmp/metals1247136559939857455/sbt-launch.jar metalsEnable bloopInstall'
+INFO  [info] Loading settings for project global-plugins from metals.sbt ...
+INFO  [info] Loading global plugins from /home/asachdeva/.sbt/1.0/plugins
+INFO  [info] Loading settings for project cats-sandbox-build from plugins.sbt ...
+INFO  [info] Loading project definition from /home/asachdeva/work/cats-sandbox/project
+INFO  [success] Generated .bloop/cats-sandbox-build.json
+INFO  [success] Total time: 1 s, completed Nov 12, 2019 3:53:09 PM
+INFO  [info] Loading settings for project cats-sandbox from build.sbt ...
+INFO  [info] Set current project to cats-sandbox (in build file:/home/asachdeva/work/cats-sandbox/)
+INFO  [info] Set current project to cats-sandbox (in build file:/home/asachdeva/work/cats-sandbox/)
+INFO  [info] semanticdb-scalac is enabled
+INFO  [success] Generated .bloop/cats-sandbox-test.json
+INFO  [success] Generated .bloop/cats-sandbox.json
+INFO  [success] Total time: 0 s, completed Nov 12, 2019 3:53:12 PM
+INFO  build tool exit: 0
+INFO  time: ran 'sbt bloopInstall' in 10s
+INFO  disconnected: build server
+shutdown request received: build/shutdown
+Client in /home/asachdeva/work/cats-sandbox/.bloop triggered cancellation. Cancelling tasks...
+[0m[31m[E][0m BSP server cancelled, closing socket...
+INFO  running embedded 'bloop bsp --protocol local --socket /tmp/bsp5089616767522427436/1krenueapgam3.socket'
+INFO  bloop exit: 0
+The server is listening for incoming connections at local:///tmp/bsp5089616767522427436/1krenueapgam3.socket...
+Accepted incoming BSP client connection at local:///tmp/bsp5089616767522427436/1krenueapgam3.socket
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/asachdeva/.cache/metals/bsp.trace.json
+request received: build/initialize
+INFO  time: connected to build server in 0.21s
+BSP initialization handshake complete.
+WARN  Could not find java sources in None. Java symbols will not be available.
+INFO  time: indexed workspace in 0.13s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.87s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.73s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.64s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.7s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.59s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.77s
+Nov 12, 2019 4:03:20 PM scala.meta.internal.pc.CompletionProvider scala$meta$internal$pc$CompletionProvider$$loadSymbolFromClassfile
+WARNING: no such symbol: Classfile(scala/collection/parallel/immutable/,package.class)
+Nov 12, 2019 4:03:20 PM scala.meta.internal.pc.CompletionProvider scala$meta$internal$pc$CompletionProvider$$loadSymbolFromClassfile
+WARNING: no such symbol: Classfile(scala/collection/parallel/immutable/,package$.class)
+Nov 12, 2019 4:03:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 45
+Nov 12, 2019 4:03:48 PM scala.meta.internal.pc.CompletionProvider scala$meta$internal$pc$CompletionProvider$$loadSymbolFromClassfile
+WARNING: no such symbol: Classfile(scala/collection/parallel/mutable/,ParArray$Map.class)
+Nov 12, 2019 4:03:49 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 99
+Nov 12, 2019 4:04:09 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 106
+Nov 12, 2019 4:04:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 131
+Nov 12, 2019 4:05:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 156
+Nov 12, 2019 4:05:51 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 212
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.07s
+Nov 12, 2019 4:08:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 222
+Nov 12, 2019 4:09:36 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Nov 12, 2019 4:09:36 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: implicit class <error> extends  (of class scala.reflect.internal.Trees$ClassDef)
+scala.MatchError: implicit class <error> extends  (of class scala.reflect.internal.Trees$ClassDef)
+	at scala.tools.nsc.typechecker.Unapplies.constrParamss(Unapplies.scala:87)
+	at scala.tools.nsc.typechecker.Unapplies.factoryMeth(Unapplies.scala:137)
+	at scala.tools.nsc.typechecker.Unapplies.factoryMeth$(Unapplies.scala:134)
+	at scala.meta.internal.pc.MetalsGlobal$MetalsInteractiveAnalyzer.factoryMeth(MetalsGlobal.scala:40)
+	at scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth.enterImplicitWrapper(MethodSynthesis.scala:238)
+	at scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth.enterImplicitWrapper$(MethodSynthesis.scala:237)
+	at scala.tools.nsc.typechecker.Namers$Namer.enterImplicitWrapper(Namers.scala:56)
+	at scala.tools.nsc.interactive.InteractiveAnalyzer$InteractiveNamer.enterExistingSym(Global.scala:94)
+	at scala.tools.nsc.interactive.InteractiveAnalyzer$InteractiveNamer.enterExistingSym$(Global.scala:80)
+	at scala.tools.nsc.interactive.InteractiveAnalyzer$$anon$2.enterExistingSym(Global.scala:51)
+	at scala.tools.nsc.typechecker.Namers$Namer.standardEnterSym(Namers.scala:305)
+	at scala.tools.nsc.typechecker.AnalyzerPlugins.pluginsEnterSym(AnalyzerPlugins.scala:478)
+	at scala.tools.nsc.typechecker.AnalyzerPlugins.pluginsEnterSym$(AnalyzerPlugins.scala:477)
+	at scala.meta.internal.pc.MetalsGlobal$MetalsInteractiveAnalyzer.pluginsEnterSym(MetalsGlobal.scala:40)
+	at scala.tools.nsc.typechecker.Namers$Namer.enterSym(Namers.scala:279)
+	at scala.tools.nsc.typechecker.Typers$Typer.enterSym(Typers.scala:1970)
+	at scala.tools.nsc.typechecker.Typers$Typer.enterSyms(Typers.scala:1965)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedTemplate(Typers.scala:2025)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedModuleDef(Typers.scala:1924)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5795)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5886)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:5950)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$10(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedTemplate(Typers.scala:2049)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedModuleDef(Typers.scala:1924)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5795)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5886)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:5950)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$10(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedPackageDef$1(Typers.scala:5494)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5797)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5886)
+	at scala.tools.nsc.typechecker.Analyzer$typerFactory$TyperPhase.apply(Analyzer.scala:115)
+	at scala.tools.nsc.Global$GlobalPhase.applyPhase(Global.scala:452)
+	at scala.tools.nsc.interactive.Global$TyperRun.applyPhase(Global.scala:1345)
+	at scala.tools.nsc.interactive.Global$TyperRun.typeCheck(Global.scala:1338)
+	at scala.tools.nsc.interactive.Global.typeCheck(Global.scala:669)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:818)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1230)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:357)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:47)
+
+Nov 12, 2019 4:09:44 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 257
+something's wrong: no file:///home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala in sandbox.Main.JsonWriter[<error>]RangePosition(file:///home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala, 675, 675, 686)
+Nov 12, 2019 4:09:51 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 309
+Nov 12, 2019 4:10:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 322
+Nov 12, 2019 4:10:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 335
+Nov 12, 2019 4:10:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 347
+Nov 12, 2019 4:11:04 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Nov 12, 2019 4:11:04 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: implicit class <error> extends  (of class scala.reflect.internal.Trees$ClassDef)
+scala.MatchError: implicit class <error> extends  (of class scala.reflect.internal.Trees$ClassDef)
+	at scala.tools.nsc.typechecker.Unapplies.constrParamss(Unapplies.scala:87)
+	at scala.tools.nsc.typechecker.Unapplies.factoryMeth(Unapplies.scala:137)
+	at scala.tools.nsc.typechecker.Unapplies.factoryMeth$(Unapplies.scala:134)
+	at scala.meta.internal.pc.MetalsGlobal$MetalsInteractiveAnalyzer.factoryMeth(MetalsGlobal.scala:40)
+	at scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth.enterImplicitWrapper(MethodSynthesis.scala:238)
+	at scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth.enterImplicitWrapper$(MethodSynthesis.scala:237)
+	at scala.tools.nsc.typechecker.Namers$Namer.enterImplicitWrapper(Namers.scala:56)
+	at scala.tools.nsc.interactive.InteractiveAnalyzer$InteractiveNamer.enterExistingSym(Global.scala:94)
+	at scala.tools.nsc.interactive.InteractiveAnalyzer$InteractiveNamer.enterExistingSym$(Global.scala:80)
+	at scala.tools.nsc.interactive.InteractiveAnalyzer$$anon$2.enterExistingSym(Global.scala:51)
+	at scala.tools.nsc.typechecker.Namers$Namer.standardEnterSym(Namers.scala:305)
+	at scala.tools.nsc.typechecker.AnalyzerPlugins.pluginsEnterSym(AnalyzerPlugins.scala:478)
+	at scala.tools.nsc.typechecker.AnalyzerPlugins.pluginsEnterSym$(AnalyzerPlugins.scala:477)
+	at scala.meta.internal.pc.MetalsGlobal$MetalsInteractiveAnalyzer.pluginsEnterSym(MetalsGlobal.scala:40)
+	at scala.tools.nsc.typechecker.Namers$Namer.enterSym(Namers.scala:279)
+	at scala.tools.nsc.typechecker.Typers$Typer.enterSym(Typers.scala:1970)
+	at scala.tools.nsc.typechecker.Typers$Typer.enterSyms(Typers.scala:1965)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedTemplate(Typers.scala:2025)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedModuleDef(Typers.scala:1924)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5795)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5886)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:5950)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$10(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedTemplate(Typers.scala:2049)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedModuleDef(Typers.scala:1924)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5795)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5886)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:5950)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$10(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedPackageDef$1(Typers.scala:5494)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5797)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5886)
+	at scala.tools.nsc.typechecker.Analyzer$typerFactory$TyperPhase.apply(Analyzer.scala:115)
+	at scala.tools.nsc.Global$GlobalPhase.applyPhase(Global.scala:452)
+	at scala.tools.nsc.interactive.Global$TyperRun.applyPhase(Global.scala:1345)
+	at scala.tools.nsc.interactive.Global$TyperRun.typeCheck(Global.scala:1338)
+	at scala.tools.nsc.interactive.Global.typeCheck(Global.scala:669)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:818)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1230)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:357)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:47)
+
+Nov 12, 2019 4:11:05 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Nov 12, 2019 4:11:05 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: implicit class <error> extends  (of class scala.reflect.internal.Trees$ClassDef)
+scala.MatchError: implicit class <error> extends  (of class scala.reflect.internal.Trees$ClassDef)
+	at scala.tools.nsc.typechecker.Unapplies.constrParamss(Unapplies.scala:87)
+	at scala.tools.nsc.typechecker.Unapplies.factoryMeth(Unapplies.scala:137)
+	at scala.tools.nsc.typechecker.Unapplies.factoryMeth$(Unapplies.scala:134)
+	at scala.meta.internal.pc.MetalsGlobal$MetalsInteractiveAnalyzer.factoryMeth(MetalsGlobal.scala:40)
+	at scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth.enterImplicitWrapper(MethodSynthesis.scala:238)
+	at scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth.enterImplicitWrapper$(MethodSynthesis.scala:237)
+	at scala.tools.nsc.typechecker.Namers$Namer.enterImplicitWrapper(Namers.scala:56)
+	at scala.tools.nsc.interactive.InteractiveAnalyzer$InteractiveNamer.enterExistingSym(Global.scala:94)
+	at scala.tools.nsc.interactive.InteractiveAnalyzer$InteractiveNamer.enterExistingSym$(Global.scala:80)
+	at scala.tools.nsc.interactive.InteractiveAnalyzer$$anon$2.enterExistingSym(Global.scala:51)
+	at scala.tools.nsc.typechecker.Namers$Namer.standardEnterSym(Namers.scala:305)
+	at scala.tools.nsc.typechecker.AnalyzerPlugins.pluginsEnterSym(AnalyzerPlugins.scala:478)
+	at scala.tools.nsc.typechecker.AnalyzerPlugins.pluginsEnterSym$(AnalyzerPlugins.scala:477)
+	at scala.meta.internal.pc.MetalsGlobal$MetalsInteractiveAnalyzer.pluginsEnterSym(MetalsGlobal.scala:40)
+	at scala.tools.nsc.typechecker.Namers$Namer.enterSym(Namers.scala:279)
+	at scala.tools.nsc.typechecker.Typers$Typer.enterSym(Typers.scala:1970)
+	at scala.tools.nsc.typechecker.Typers$Typer.enterSyms(Typers.scala:1965)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedTemplate(Typers.scala:2025)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedModuleDef(Typers.scala:1924)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5795)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5886)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:5950)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$10(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedTemplate(Typers.scala:2049)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedModuleDef(Typers.scala:1924)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5795)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5886)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:5950)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$10(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedPackageDef$1(Typers.scala:5494)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5797)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5886)
+	at scala.tools.nsc.typechecker.Analyzer$typerFactory$TyperPhase.apply(Analyzer.scala:115)
+	at scala.tools.nsc.Global$GlobalPhase.applyPhase(Global.scala:452)
+	at scala.tools.nsc.interactive.Global$TyperRun.applyPhase(Global.scala:1345)
+	at scala.tools.nsc.interactive.Global$TyperRun.typeCheck(Global.scala:1338)
+	at scala.tools.nsc.interactive.Global.typeCheck(Global.scala:669)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:818)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1230)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:357)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:47)
+
+Nov 12, 2019 4:11:22 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 362
+something's wrong: no file:///home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala in sandbox.Main.JsonWriter[<error>]RangePosition(file:///home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala, 834, 834, 845)
+Nov 12, 2019 4:11:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 382
+Nov 12, 2019 4:11:40 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 393
+Nov 12, 2019 4:12:01 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 402
+Nov 12, 2019 4:12:02 PM scala.meta.internal.pc.CompletionProvider scala$meta$internal$pc$CompletionProvider$$loadSymbolFromClassfile
+WARNING: no such symbol: Classfile(scala/collection/parallel/mutable/,ParArray$Map.class)
+Nov 12, 2019 4:12:04 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 414
+Nov 12, 2019 4:12:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 418
+Nov 12, 2019 4:12:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 425
+Nov 12, 2019 4:12:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 434
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.83s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.27s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.07s
+Nov 12, 2019 4:16:57 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 436
+Nov 12, 2019 4:17:03 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 465
+Nov 12, 2019 4:17:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 467
+Nov 12, 2019 4:17:30 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 475
+Nov 12, 2019 4:17:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 484
+Nov 12, 2019 4:18:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 491
+Nov 12, 2019 4:18:37 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 506
+Nov 12, 2019 4:19:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 511
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.95s
+Nov 12, 2019 4:21:53 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Nov 12, 2019 4:21:53 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: implicit class <error> extends  (of class scala.reflect.internal.Trees$ClassDef)
+scala.MatchError: implicit class <error> extends  (of class scala.reflect.internal.Trees$ClassDef)
+	at scala.tools.nsc.typechecker.Unapplies.constrParamss(Unapplies.scala:87)
+	at scala.tools.nsc.typechecker.Unapplies.factoryMeth(Unapplies.scala:137)
+	at scala.tools.nsc.typechecker.Unapplies.factoryMeth$(Unapplies.scala:134)
+	at scala.meta.internal.pc.MetalsGlobal$MetalsInteractiveAnalyzer.factoryMeth(MetalsGlobal.scala:40)
+	at scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth.enterImplicitWrapper(MethodSynthesis.scala:238)
+	at scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth.enterImplicitWrapper$(MethodSynthesis.scala:237)
+	at scala.tools.nsc.typechecker.Namers$Namer.enterImplicitWrapper(Namers.scala:56)
+	at scala.tools.nsc.interactive.InteractiveAnalyzer$InteractiveNamer.enterExistingSym(Global.scala:94)
+	at scala.tools.nsc.interactive.InteractiveAnalyzer$InteractiveNamer.enterExistingSym$(Global.scala:80)
+	at scala.tools.nsc.interactive.InteractiveAnalyzer$$anon$2.enterExistingSym(Global.scala:51)
+	at scala.tools.nsc.typechecker.Namers$Namer.standardEnterSym(Namers.scala:305)
+	at scala.tools.nsc.typechecker.AnalyzerPlugins.pluginsEnterSym(AnalyzerPlugins.scala:478)
+	at scala.tools.nsc.typechecker.AnalyzerPlugins.pluginsEnterSym$(AnalyzerPlugins.scala:477)
+	at scala.meta.internal.pc.MetalsGlobal$MetalsInteractiveAnalyzer.pluginsEnterSym(MetalsGlobal.scala:40)
+	at scala.tools.nsc.typechecker.Namers$Namer.enterSym(Namers.scala:279)
+	at scala.tools.nsc.typechecker.Typers$Typer.enterSym(Typers.scala:1970)
+	at scala.tools.nsc.typechecker.Typers$Typer.enterSyms(Typers.scala:1965)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedTemplate(Typers.scala:2025)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedModuleDef(Typers.scala:1924)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5795)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5886)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:5950)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$10(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedTemplate(Typers.scala:2049)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedModuleDef(Typers.scala:1924)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5795)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5886)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:5950)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$10(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3394)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedPackageDef$1(Typers.scala:5494)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5797)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5886)
+	at scala.tools.nsc.typechecker.Analyzer$typerFactory$TyperPhase.apply(Analyzer.scala:115)
+	at scala.tools.nsc.Global$GlobalPhase.applyPhase(Global.scala:452)
+	at scala.tools.nsc.interactive.Global$TyperRun.applyPhase(Global.scala:1345)
+	at scala.tools.nsc.interactive.Global$TyperRun.typeCheck(Global.scala:1338)
+	at scala.tools.nsc.interactive.Global.typeCheck(Global.scala:669)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:818)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1230)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:357)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:47)
+
+Nov 12, 2019 4:22:04 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 537
+Nov 12, 2019 4:22:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 634
+Nov 12, 2019 4:22:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 636
+Nov 12, 2019 4:22:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 644
+Nov 12, 2019 4:22:40 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 652
+Nov 12, 2019 4:23:00 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 654
+Nov 12, 2019 4:24:00 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 660
+Nov 12, 2019 4:24:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 688
+Nov 12, 2019 4:24:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 693
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.21s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.98s
+Nov 12, 2019 4:26:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 698
+Nov 12, 2019 4:26:10 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 721
+Nov 12, 2019 4:26:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 726
+INFO  compiling cats-sandbox (1 scala source)
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:65:26: stale scalac error: unclosed string literal
+  println(Person("papa", "papa@papa.com).toJson(personWriter))
+                         ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:65:26: stale scalac error: unclosed string literal
+  println(Person("papa", "papa@papa.com).toJson(personWriter))
+                         ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:70:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  time: compiled cats-sandbox in 57ms
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:65:26: stale scalac error: unclosed string literal
+  println(Person("papa", "papa@papa.com).toJson(personWriter))
+                         ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:65:26: stale scalac error: unclosed string literal
+  println(Person("papa", "papa@papa.com).toJson(personWriter))
+                         ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:70:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  time: compiled cats-sandbox in 31ms
+ERROR Failed to compile 'cats-sandbox'
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:65:26: stale scalac error: unclosed string literal
+  println(Person("papa", "papa@papa.com).toJson(personWriter))
+                         ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:70:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:65:26: stale scalac error: unclosed string literal
+  println(Person("papa", "papa@papa.com).toJson(personWriter))
+                         ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:70:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.97s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.19s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.19s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.91s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.24s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.25s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.27s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.22s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.57s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.15s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.92s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.95s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.84s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.97s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.2s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.23s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.09s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.22s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.21s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.01s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.93s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.11s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.88s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.02s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.99s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.91s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.11s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.26s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.95s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.27s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.21s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.16s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 45ms
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 18ms
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.18s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.18s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.07s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 0.94s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.44s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.36s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 1.11s
+INFO  compiling cats-sandbox (1 scala source)
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  time: compiled cats-sandbox in 0.47s
+ERROR Failed to compile 'cats-sandbox'
+INFO  compiling cats-sandbox (1 scala source)
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  time: compiled cats-sandbox in 99ms
+ERROR Failed to compile 'cats-sandbox'
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: stale scalac error: unclosed string literal
+  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))
+                                                     ^
+INFO  /home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: stale scalac error: ')' expected but '}' found.
+}
+^
+INFO  compiling cats-sandbox (1 scala source)
+INFO  time: compiled cats-sandbox in 5.92s
+INFO  bloop exit: 0
