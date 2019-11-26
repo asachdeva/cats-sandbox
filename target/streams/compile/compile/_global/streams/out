@@ -1,7 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:69:54: unclosed string literal[0m
-[0m[[0m[31merror[0m] [0m[0m  println(Json.toJson(Employee("Kristen Massey", 39, "kmassey22@yahoo.com)))[0m
-[0m[[0m[31merror[0m] [0m[0m                                                     ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/asachdeva/work/cats-sandbox/src/main/scala/sandbox/Main.scala:194:1: ')' expected but '}' found.[0m
-[0m[[0m[31merror[0m] [0m[0m}[0m
-[0m[[0m[31merror[0m] [0m[0m^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
