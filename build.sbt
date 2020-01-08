@@ -14,6 +14,6 @@ scalacOptions ++= Seq(
 )
 
 resolvers += Resolver.sonatypeRepo("releases")
-libraryDependencies += "org.typelevel" %% "cats-core" % "2.0.0"
+libraryDependencies += "org.typelevel" %% "cats-core" % "2.1.0"
 
-addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.10.3" cross CrossVersion.binary)
+addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.11.0" cross CrossVersion.full)

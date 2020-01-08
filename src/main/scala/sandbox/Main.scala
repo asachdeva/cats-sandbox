@@ -8,22 +8,28 @@ object Main extends App {
 
   // Chapter -- 1
   // First part of the type class is the trait
-  // with at least one type trait and represents
+  // with at least one type param and represents
   // some functionality we would like to implement
+
   sealed trait Json
   final case class JsString(get: String) extends Json
   final case class JsObject(get: Map[String, Json]) extends Json
   final case class JsNumber(get: Double) extends Json
   final case object JsNull extends Json
 
+
   trait JsonWriter[A] {
     def write(value: A): Json
   }
 
+
   // Second part of the typeclass is the Type class Instance
   // This provides implementations for the types we care about
   // in the below example we care about Employee Type
+
   final case class Person(name: String, email: String)
+
+  //final case class Person(name: String, email: String)
 
   object JsonWriterInstances {
     implicit val stringWriter: JsonWriter[String] =
@@ -339,6 +345,14 @@ object Main extends App {
       println(Monoid[Option[Int]].combine(oneOption, twoOption))
       println(oneOption |+| twoOption)
 
+      println(Semigroup[List[Int]].combine(List(1,2,3), List(4,5,6)))
+
+      val aMap = Map("foo" -> Map("bar" -> 5))
+      val anotherMap = Map("foo" -> Map("bar" -> 6))
+      val combineMap = aMap |+| anotherMap
+      println(combineMap.get("foo"))
+      println(Monoid[Map[String, Int]].combineAll(List(Map("a" ->  1, "b" -> 2), Map("a" -> 3))))
+      println(Monoid[Map[String, Int]].combineAll(List()) )
 
       // Ex 2.5.4
       def add(items: List[Int]): Int =
@@ -364,6 +378,7 @@ object Main extends App {
       // Internall a functor is anythign with a map method
       // so a List, an Option, an Either etc
 
+      println(Functor[Option].map(Option("Hello"))(_.length))
       println(List(1,2,3).map(n => n + 1))
       println(List(1,2,3).map(n => n +1).map(n => n + 2))
 
@@ -649,7 +664,7 @@ object Main extends App {
       }
 
       //println(factorial(50000))
-      println(factorial2(50000).value)
+      //println(factorial2(50000).value)
 
       import cats.data.Writer
 
