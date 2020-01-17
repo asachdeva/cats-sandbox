@@ -5,6 +5,7 @@ import cats._
 
 object Main extends App {
   println("Hello " |+| "Cats!")
+  println("Hello " |+| "World")
 
   // Chapter -- 1
   // First part of the type class is the trait
