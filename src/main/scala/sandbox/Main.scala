@@ -379,7 +379,6 @@ object Main extends App {
       // Internall a functor is anythign with a map method
       // so a List, an Option, an Either etc
 
-      println(Functor[Option].map(Option("Hello"))(_.length))
       println(List(1,2,3).map(n => n + 1))
       println(List(1,2,3).map(n => n +1).map(n => n + 2))
 
@@ -407,15 +406,29 @@ object Main extends App {
       println((func1 andThen func2)(1))
       println(func2(func1(1)))
 
+      val func =
+        ((x: Int) => x.toDouble).
+         map(x => x + 1).
+         map(x => x * 2).
+         map(x => s"${x}!")
+      println("Akshay value of func is " + func(123))
+
+
       //trait Functor[F[_]] {
         //def map[A, B](fa: F[A])(f: A => B): F[B]
       //}
 
       val list1 = List(1,2,3)
       val list2 = Functor[List].map(list1)(_ * 2)
+      val list3 = Functor[List].map(list1)(_ * 3)
       println(list2)
+      println(list3)
 
       // Functor alsoe supplies the lift method
+
+      val myfunc = (x: Int) => x + 77
+      val liftedMyFunc = Functor[Option].lift(myfunc)
+      println(liftedMyFunc(2.some))
 
       val func3 = (x: Int) => x + 1
       val liftedFunc = Functor[Option].lift(func3)
@@ -432,15 +445,16 @@ object Main extends App {
         start.map(n => n + 1 * 2)
 
       println(doMath(20.some))
+      println(doMath(1.some))
 
       println(doMath(List(1, 2, 3)))
 
       def doMath2[F[_]: Functor](start: F[Int]): F[Int] =
         start.map(n => n + 1 * 2)
 
-      println("DoMath2" + doMath2(20.some))
+      println("DoMath2 " + doMath2(20.some))
 
-      println("DoMath2" + doMath2(List(1,2,3)))
+      println("DoMath2 " + doMath2(List(1,2,3)))
       // Example to show Futures are not RT
 
       import scala.util.Random
