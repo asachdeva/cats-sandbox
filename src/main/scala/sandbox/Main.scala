@@ -553,8 +553,9 @@ object Main extends App {
     println(showSymbol.show(Symbol("dave")))
 
     // Chapter 4 Monads
+    // Most common abstaction in Scala
     // Mechanism for seuqencing computations
-    // informally anythign with a constructor and a flatMap
+    // informally anything with a constructor and a flatMap
 
     def parseInt(str: String): Option[Int] =
       scala.util.Try(str.toInt).toOption
@@ -569,12 +570,25 @@ object Main extends App {
           }
       }
 
+    def stringDivideByForComp(astr: String, bstr: String): Option[Int] =
+      for {
+        anum <- parseInt(astr)
+        bnum <- parseInt(bstr)
+        ans  <- divide(anum, bnum)
+      } yield ans
+
     println(stringDivideBy("8", "2"))
     println(stringDivideBy("8", "0"))
     println(stringDivideBy("zero", "3"))
 
     // Note: Every monad is also a functor
     // so we can use map and flatMap or for comprehensions
+    //
+    // trait Monad[F[_]] [
+    //  def pure[A](value: A): F[A]
+    //  def flatMap[A,B](value: F[A])(func: A => F[B]): F[B]
+    //  def map[A,B](value: F[A])(func: A => B) : F[B] =
+    //   flatmap(value)(a => pure(func(a)))
 
     def stringDivideByFor(aStr: String, bStr: String): Option[Int] =
       for {
@@ -599,6 +613,7 @@ object Main extends App {
 
     val liste = 1.pure[List]
     val option1 = 1.pure[Option]
+    val option77 = 77.pure[Option]
 
     def sumSquares2[F[_]: Monad](a: F[Int], b: F[Int]): F[Int] =
       a.flatMap(x => b.map(y => x*x + y*y))
@@ -612,7 +627,7 @@ object Main extends App {
     println(sumSquares2(2.some, 3.some))
     println(sumSquares(List(1, 2, 3), List(3, 5)))
 
-    println(sumSquares(1: Id[Int],2: Id[Int]))
+    println(sumSquares(3: Id[Int],4: Id[Int]))
 
     val a = 3.asRight[String]
     val b = 4.asRight[String]
@@ -629,9 +644,43 @@ object Main extends App {
         }
       }
 
+    def divZero(): Either[String, Int] =
+      for {
+        a <- 1.asRight[String]
+        b <- 1.asRight[String]
+        c <- if (b === 0) "DIV0".asLeft[Int]
+        else (a/b).asRight[String]
+      } yield c * 100
+
+    println("DIV0 " + divZero)
 
     println(countPositive(List(1, 2, 3, 4)))
     println(countPositive(List(1, 2, -3, 4)))
+
+    // Error Handling --
+    // always define errors as ADT to be more explicit as opposed
+    // to say using Throwable
+    //
+    //
+    sealed trait LoginError extends Product with Serializable
+    final case class UserNotFound(username: String) extends LoginError
+    final case class PasswordIncorrect(username: String) extends LoginError
+    case object  UnexpectedError extends LoginError
+    case class User(username: String, password: String)
+    type LoginResult = Either[LoginError, User]
+
+    def handleError(error: LoginError): Unit =
+      error match {
+        case UserNotFound(u) =>
+          println(s"User Not found: $u")
+
+        case PasswordIncorrect(u) =>
+          println(s"Password is Incorrrect: $u")
+
+        case UnexpectedError =>
+          println(s"UnexpectedError")
+      }
+
 
     // MonadError
 
@@ -681,10 +730,63 @@ object Main extends App {
       //println(factorial(50000))
       //println(factorial2(50000).value)
 
+      // Writer Monad allows us to carry along a log
+      // along with the computation
       import cats.data.Writer
 
       val w = Writer(Vector(
         "It was the best of times",
         "It was the worst of times"
       ), 1859)
+
+      type Logged[A] = Writer[Vector[String], A]
+
+      println(123.pure[Logged])
+      // If we have a log and no result we can use tell syntax
+      Vector("msg1", "msg2").tell
+      // Extract only the result using value or the log using written
+      // or both using run
+
+      val writ = 123.writer(Vector("msg1", "msg2"))
+      println(writ.run)
+
+      val writer1 = for {
+       a <- 10.pure[Logged]
+       _ <- Vector("a", "b", "c").tell
+       b <- 32.writer(Vector("x", "y", "z"))
+       } yield a + b
+
+      println(writer1.run)
+      println(writer1.mapWritten(_.map(_.toUpperCase)).run)
+      // Log in a writer is preserved when we map and flatmap
+
+      // Reader Monad
+      // Sequence Operations that depend on some Input
+      // One useful case is DI...chain together operations
+
+      import cats.data.Reader
+      case class Cat2(name: String, favoriteFood: String)
+      val catName: Reader[Cat2, String] =
+        Reader(cat => cat.name)
+      val greetKitty: Reader[Cat2, String] =
+        catName.map(name => s"Hello ${name}")
+      val feedKitty: Reader[Cat2, String] =
+        Reader(cat => s"Have a nice bowl of ${cat.favoriteFood}")
+      val greetAndFeed: Reader[Cat2, String] =
+        for {
+          greet <- greetKitty
+          feed  <- feedKitty
+        } yield s"$greet. $feed"
+
+      println(catName.run(Cat2("Garfield","Kibbles")))
+      println(greetKitty.run(Cat2("Heathcliff","junkfood")))
+      println(greetAndFeed(Cat2("Buckles","Softfood")))
+      // Eval in foldright
+      def foldRight[A,B](as: List[A], z: B)(fn: (A, B) => B): B =
+        as match {
+          case head::tail =>
+            fn(head, foldRight(tail,z)(fn))
+          case Nil =>
+            z
+        }
 }
