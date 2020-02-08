@@ -17,3 +17,6 @@ resolvers += Resolver.sonatypeRepo("releases")
 libraryDependencies += "org.typelevel" %% "cats-core" % "2.1.0"
 
 addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.11.0" cross CrossVersion.full)
+
+// CI build
+addCommandAlias("buildCatsSandbox", ";clean;+test;")
