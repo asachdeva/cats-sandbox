@@ -237,9 +237,7 @@ object Main extends App {
   println(optionCat1 === optionCat3)
 
   implicit val dateEq: Eq[Date] =
-    Eq.instance[Date] { (date1, date2) =>
-      date1.getTime === date2.getTime
-    }
+    Eq.instance[Date]((date1, date2) => date1.getTime === date2.getTime)
 
   // Chapter 2 -- Monoids and Semigroups
   // Monoids and Semigroup allow us to add
@@ -554,11 +552,7 @@ object Main extends App {
     if (b == 0) None else Some(a / b)
 
   def stringDivideBy(astr: String, bStr: String): Option[Int] =
-    parseInt(astr).flatMap { aNum =>
-      parseInt(bStr).flatMap { bNum =>
-        divide(aNum, bNum)
-      }
-    }
+    parseInt(astr).flatMap(aNum => parseInt(bStr).flatMap(bNum => divide(aNum, bNum)))
 
   def stringDivideByForComp(astr: String, bstr: String): Option[Int] =
     for {
@@ -691,9 +685,7 @@ object Main extends App {
     .always {
       println("Step 1"); "Hello"
     }
-    .map { str =>
-      println("Step 2"); s"$str World"
-    }
+    .map { str => println("Step 2"); s"$str World" }
 
   println(greeting.value)
 
