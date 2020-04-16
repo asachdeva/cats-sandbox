@@ -1,7 +1,7 @@
 package sandbox
 
-import cats.implicits._
 import cats._
+import cats.implicits._
 
 object Main extends App {
   println("Hello " |+| "Cats!")
@@ -92,8 +92,8 @@ object Main extends App {
         w.write(value)
     }
   }
-  import JsonWriterInstances._
   import JsonSyntax._
+  import JsonWriterInstances._
   println(Person("Miles Sabin", "miles@sabin.com").toJson)
   println(Person("papa", "papa@papa.com").toJson(personWriter))
 
@@ -377,9 +377,9 @@ object Main extends App {
   println(List(1, 2, 3).map(n => n + 1))
   println(List(1, 2, 3).map(n => n + 1).map(n => n + 2))
 
-  import scala.concurrent.{Await, Future}
   import scala.concurrent.ExecutionContext.Implicits.global
   import scala.concurrent.duration._
+  import scala.concurrent.{Await, Future}
 
   val future: Future[String] =
     Future(123).map(n => n + 1).map(n => n + 2).map(n => s"$n!")
