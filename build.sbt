@@ -11,8 +11,21 @@ val CatsVersion = "2.1.1"
 val LogbackVersion = "1.2.3"
 val MunitVersion = "0.7.3"
 
+val MUnitFramework = new TestFramework("munit.Framework")
+
+lazy val testSettings: Seq[Def.Setting[_]] = List(
+  Test / parallelExecution := false,
+  skip.in(publish) := true,
+  fork := true,
+  testFrameworks := List(MUnitFramework),
+  testOptions.in(Test) ++= {
+      List(Tests.Argument(MUnitFramework, "+l", "--verbose"))
+    }
+)
+
 lazy val root = (project in file("."))
   .settings(
+    testSettings,
     organization := "asachdeva",
     name := "cats-sandbox",
     version := "0.0.1-SNAPSHOT",

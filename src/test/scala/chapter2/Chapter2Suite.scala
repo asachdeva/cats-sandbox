@@ -2,9 +2,8 @@ package chapter2
 
 import Chapter2.BooleanMonoid
 import Chapter2._
-import munit.FunSuite
 
-class Chapter2Suite extends FunSuite {
+class Chapter2Suite extends munit.FunSuite {
 
   def identityLaw[A](x: A)(implicit m: Monoid[A]): Boolean =
     (m.combine(x, m.empty) == x) && (m.combine(m.empty, x) == x)
