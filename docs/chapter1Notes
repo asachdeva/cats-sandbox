@@ -1,0 +1,18 @@
+Type classes are a programming pattern originating in Haskell.  They allow us
+to extend existing libraries with new functionality, without using traditional
+inheritance and without altering original library source code
+
+Three important components to a type class:
+1] Type class
+   A Typeclass is an interface/API that represents some functionality we want to
+   implement
+   Cats --> Trait with at least one type parameter
+
+2] TypeClass instances
+   The instances of a type class provide implementations of the type class for
+   the types we care about
+
+3] TypeClass Interface
+   Any functionality we expose to users.  2 ways -- Interface Objects/ Interface Syntax
+
+
