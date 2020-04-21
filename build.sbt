@@ -19,8 +19,8 @@ lazy val testSettings: Seq[Def.Setting[_]] = List(
   fork := true,
   testFrameworks := List(MUnitFramework),
   testOptions.in(Test) ++= {
-      List(Tests.Argument(MUnitFramework, "+l", "--verbose"))
-    }
+    List(Tests.Argument(MUnitFramework, "+l", "--verbose"))
+  }
 )
 
 lazy val root = (project in file("."))
