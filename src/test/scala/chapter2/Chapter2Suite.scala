@@ -4,6 +4,8 @@ import Chapter2.BooleanMonoid
 import Chapter2._
 
 class Chapter2Suite extends munit.FunSuite {
+  val booleanValues = List(true, false)
+  val setValues = List(Set(1, 2, 3), Set(3, 4, 5), Set(4, 5, 6))
 
   def identityLaw[A](x: A)(implicit m: Monoid[A]): Boolean =
     (m.combine(x, m.empty) == x) && (m.combine(m.empty, x) == x)
@@ -25,30 +27,56 @@ class Chapter2Suite extends munit.FunSuite {
 
   test("Ex 2.3 andMonoid") {
     import BooleanMonoid.andMonoid
-    val booleanValues = List(true, false)
     testIdentityLaws(booleanValues)
     testAssociativityLaws(booleanValues)
   }
 
   test("Ex 2.3 orMonoid") {
     import BooleanMonoid.orMonoid
-    val booleanValues = List(true, false)
     testIdentityLaws(booleanValues)
     testAssociativityLaws(booleanValues)
   }
 
   test("Ex 2.3 booleanEitherMonoid") {
     import BooleanMonoid.booleanEitherMonoid
-    val booleanValues = List(true, false)
     testIdentityLaws(booleanValues)
     testAssociativityLaws(booleanValues)
   }
 
   test("Ex 2.3 booleanXnorMonoid") {
     import BooleanMonoid.booleanXnorMonoid
-    val booleanValues = List(true, false)
     testIdentityLaws(booleanValues)
     testAssociativityLaws(booleanValues)
+  }
+
+  test("Ex 2.4 setUnionMonoid") {
+    implicit val setIntMonoid = SetMonoid.setUnionMonoid[Int]
+
+    testIdentityLaws(setValues)
+    testAssociativityLaws(setValues)
+  }
+
+  test("Ex 2.4 setSymDiffMonoid") {
+    implicit val setIntMonoid = SetMonoid.symDiffMonoid[Int]
+
+    testIdentityLaws(setValues)
+    testAssociativityLaws(setValues)
+  }
+
+  test("Ex 2.5.4 -- SuperAdder test add3 test for ints Option[Int] and Orders") {
+    import cats.implicits._
+
+    import SuperAdder._
+
+    val ints = List(1, 2, 3, 4, 5)
+    assert(add3(ints) == 15)
+
+    val optionInts = List(Option(1), Option(2))
+    assert(add3(optionInts) == Option(3))
+
+    val listOrders = List(Order(1.0, 2.0), Order(2.0, 3.0), Order(3.0, 4.0))
+    assert(add3(listOrders) == Order(6.0, 9.0))
+
   }
 
 }

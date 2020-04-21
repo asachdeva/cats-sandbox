@@ -15,7 +15,6 @@ object Chapter2 {
   }
 
   // Ex 2.3
-
   object BooleanMonoid {
     implicit val andMonoid: Monoid[Boolean] = new Monoid[Boolean] {
       def empty: Boolean = true
@@ -38,4 +37,40 @@ object Chapter2 {
     }
   }
 
+  // Ex 2.4 -- Note Set Intersection is a semigroup
+  object SetMonoid {
+    implicit def setUnionMonoid[A]: Monoid[Set[A]] = new Monoid[Set[A]] {
+      def empty: Set[A] = Set.empty[A]
+      def combine(set1: Set[A], set2: Set[A]): Set[A] = set1.union(set2)
+    }
+
+    implicit def symDiffMonoid[A]: Monoid[Set[A]] = new Monoid[Set[A]] {
+      def empty: Set[A] = Set.empty
+      def combine(set1: Set[A], set2: Set[A]): Set[A] = (set1.diff(set2)).union(set2.diff(set1))
+    }
+  }
+
+  //  2.5.4
+  object SuperAdder {
+    def add(items: List[Int]): Int =
+      items.foldLeft(0)(_ + _)
+
+    import cats.implicits._
+
+    def add2[A](items: List[A])(implicit monoid: cats.Monoid[A]): A =
+      items.foldLeft(monoid.empty)(_ |+| _)
+
+    def add3[A: cats.Monoid](items: List[A]): A =
+      items.foldLeft(cats.Monoid[A].empty)(_ |+| _)
+
+    case class Order(totalCost: Double, quantity: Double)
+
+    implicit val orderMonoid =
+      new cats.Monoid[Order] {
+        def empty: Order = Order(0.0, 0.0)
+        def combine(order1: Order, order2: Order) =
+          Order(order1.totalCost + order2.totalCost, order1.quantity + order2.quantity)
+      }
+
+  }
 }
