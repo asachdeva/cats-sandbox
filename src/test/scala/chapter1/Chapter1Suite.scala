@@ -3,11 +3,11 @@ package chapter1
 import cats._
 import cats.implicits._
 
+import Chapter1.PrintableInstances._
+import Chapter1._
 import munit.FunSuite
 
 class Chapter1Suite extends FunSuite {
-  import Chapter1.PrintableInstances._
-  import Chapter1._
   test("Ex 1.3") {
     assert(Printable.format("100") == "100")
     assert(Printable.format(100) == "100")
