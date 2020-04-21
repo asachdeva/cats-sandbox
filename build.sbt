@@ -9,8 +9,6 @@ val format = taskKey[Unit]("Format files using scalafmt and scalafix")
 val CatsEffectVersion = "2.1.3"
 val CatsVersion = "2.1.1"
 val LogbackVersion = "1.2.3"
-val ScalaMockVersion = "4.4.0"
-val ScalaTestVersion = "3.1.1"
 val MunitVersion = "0.7.3"
 
 lazy val root = (project in file("."))
@@ -21,8 +19,6 @@ lazy val root = (project in file("."))
     scalaVersion := "2.13.1",
     libraryDependencies ++= Seq(
       "ch.qos.logback" % "logback-classic" % LogbackVersion,
-      "org.scalamock" %% "scalamock" % ScalaMockVersion % Test,
-      "org.scalatest" %% "scalatest" % ScalaTestVersion % Test,
       "org.scalameta" %% "munit" % MunitVersion % Test,
       "org.typelevel" %% "cats-core" % CatsVersion,
       "org.typelevel" %% "cats-effect" % CatsEffectVersion
@@ -31,7 +27,7 @@ lazy val root = (project in file("."))
     addCompilerPlugin(scalafixSemanticdb),
     testFrameworks := List(new TestFramework("munit.Framework")),
     format := {
-      Command.process("scalafmt", state.value)
+      Command.process("scalafmtAll", state.value)
       Command.process("scalafmtSbt", state.value)
       Command.process("scalafix", state.value)
       Command.process("scalafix RemoveUnused", state.value)
