@@ -1,8 +1,8 @@
 name := "cats-sandbox"
 version := "0.0.1-SNAPSHOT"
 
-scalafixDependencies in ThisBuild +=
-  "com.nequissimus" %% "sort-imports" % "0.3.2"
+//scalafixDependencies in ThisBuild +=
+  //"com.nequissimus" %% "sort-imports" % "0.3.2"
 
 val format = taskKey[Unit]("Format files using scalafmt and scalafix")
 
@@ -29,7 +29,7 @@ lazy val root = (project in file("."))
     organization := "asachdeva",
     name := "cats-sandbox",
     version := "0.0.1-SNAPSHOT",
-    scalaVersion := "2.13.1",
+    scalaVersion := "2.13.2",
     libraryDependencies ++= Seq(
       "ch.qos.logback" % "logback-classic" % LogbackVersion,
       "org.scalameta" %% "munit" % MunitVersion % Test,
@@ -37,15 +37,15 @@ lazy val root = (project in file("."))
       "org.typelevel" %% "cats-effect" % CatsEffectVersion
     ),
     addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
-    addCompilerPlugin(scalafixSemanticdb),
+    //addCompilerPlugin(scalafixSemanticdb),
     testFrameworks := List(new TestFramework("munit.Framework")),
     format := {
       Command.process("scalafmtAll", state.value)
       Command.process("scalafmtSbt", state.value)
-      Command.process("scalafix", state.value)
-      Command.process("scalafix RemoveUnused", state.value)
-      Command.process("test:scalafix", state.value)
-      Command.process("test:scalafix RemoveUnused", state.value)
+      //Command.process("scalafix", state.value)
+      //Command.process("scalafix RemoveUnused", state.value)
+      //Command.process("test:scalafix", state.value)
+      //Command.process("test:scalafix RemoveUnused", state.value)
     }
   )
 
