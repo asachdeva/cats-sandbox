@@ -2,7 +2,7 @@ name := "cats-sandbox"
 version := "0.0.1-SNAPSHOT"
 
 //scalafixDependencies in ThisBuild +=
-  //"com.nequissimus" %% "sort-imports" % "0.3.2"
+//"com.nequissimus" %% "sort-imports" % "0.3.2"
 
 val format = taskKey[Unit]("Format files using scalafmt and scalafix")
 
