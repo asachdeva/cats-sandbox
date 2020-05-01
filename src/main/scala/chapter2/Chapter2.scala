@@ -39,15 +39,17 @@ object Chapter2 {
 
   // Ex 2.4 -- Note Set Intersection is a semigroup
   object SetMonoid {
-    implicit def setUnionMonoid[A]: Monoid[Set[A]] = new Monoid[Set[A]] {
-      def empty: Set[A] = Set.empty[A]
-      def combine(set1: Set[A], set2: Set[A]): Set[A] = set1.union(set2)
-    }
+    implicit def setUnionMonoid[A]: Monoid[Set[A]] =
+      new Monoid[Set[A]] {
+        def empty: Set[A] = Set.empty[A]
+        def combine(set1: Set[A], set2: Set[A]): Set[A] = set1.union(set2)
+      }
 
-    implicit def symDiffMonoid[A]: Monoid[Set[A]] = new Monoid[Set[A]] {
-      def empty: Set[A] = Set.empty
-      def combine(set1: Set[A], set2: Set[A]): Set[A] = (set1.diff(set2)).union(set2.diff(set1))
-    }
+    implicit def symDiffMonoid[A]: Monoid[Set[A]] =
+      new Monoid[Set[A]] {
+        def empty: Set[A] = Set.empty
+        def combine(set1: Set[A], set2: Set[A]): Set[A] = (set1.diff(set2)).union(set2.diff(set1))
+      }
   }
 
   //  2.5.4

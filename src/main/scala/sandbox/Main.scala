@@ -620,19 +620,19 @@ object Main extends App {
 
   def countPositive(numList: List[Int]): Either[String, Int] =
     numList.foldLeft(0.asRight[String]) { (accumulator, num) =>
-      if (num > 0) {
+      if (num > 0)
         accumulator.map(_ + 1)
-      } else {
+      else
         Left("Negative Stopping")
-      }
     }
 
   def divZero(): Either[String, Int] =
     for {
       a <- 1.asRight[String]
       b <- 1.asRight[String]
-      c <- if (b === 0) "DIV0".asLeft[Int]
-      else (a / b).asRight[String]
+      c <-
+        if (b === 0) "DIV0".asLeft[Int]
+        else (a / b).asRight[String]
     } yield c * 100
 
   println("DIV0 " + divZero)
@@ -705,11 +705,10 @@ object Main extends App {
     if (n == 1) n else n * factorial(n - 1)
 
   def factorial2(n: BigInt): Eval[BigInt] =
-    if (n == 1) {
+    if (n == 1)
       Eval.now(n)
-    } else {
+    else
       Eval.defer(factorial2(n - 1).map(_ * n))
-    }
 
   //println(factorial(50000))
   //println(factorial2(50000).value)
@@ -722,7 +721,8 @@ object Main extends App {
                    "It was the best of times",
                    "It was the worst of times"
                  ),
-                 1859)
+                 1859
+  )
 
   type Logged[A] = Writer[Vector[String], A]
 
