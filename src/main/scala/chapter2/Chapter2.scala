@@ -73,6 +73,16 @@ object Chapter2 {
         def combine(order1: Order, order2: Order) =
           Order(order1.totalCost + order2.totalCost, order1.quantity + order2.quantity)
       }
-
   }
+
+  import cats.implicits._
+
+  cats.Monoid[String].combine("Hi", "There")
+
+  val a = Option(10)
+  val b = Option(20)
+
+  val c = cats.Monoid[Option[Int]].combine(a, b)
+
+  val d = a |+| b
 }
