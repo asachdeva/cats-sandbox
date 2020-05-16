@@ -48,6 +48,7 @@ scalacOptions ++= Seq(
   "-unchecked", // warn about unchecked type parameters
   "-feature", // warn about misused language features
   "-language:higherKinds", // allow higher kinded types without `import scala.language.higherKinds`
+  "-language:postfixOps",
   "-Xlint", // enable handy linter warnings
   "-Xfatal-warnings", // turn compiler warnings into errors
   "-Ywarn-unused"
