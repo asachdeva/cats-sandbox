@@ -124,4 +124,53 @@ object Chapter4 {
       _ <- Vector(s"fact $n $ans").tell
     } yield ans
 
+  import cats.data.Reader
+
+  case class Cat(name: String, favoriteFood: String)
+
+  val catName: Reader[Cat, String] =
+    Reader(cat => cat.name)
+
+  catName.run(Cat("Akshay", "Chicken"))
+
+  val greetKitty: Reader[Cat, String] =
+    catName.map(name => s"Hello $name")
+
+  val feedKitty: Reader[Cat, String] =
+    Reader(cat => s"Have a nice bowl of ${cat.favoriteFood}")
+
+  val greetAndFeed: Reader[Cat, String] =
+    for {
+      greet <- greetKitty
+      feed <- feedKitty
+    } yield (s"$greet $feed")
+
+  // Ex 4.8.3
+  object DbReader {
+    final case class Db(
+      usernames: Map[Int, String],
+      passwords: Map[String, String]
+    )
+
+    type DbReader[A] = Reader[Db, A]
+
+    def findUsername(userId: Int): DbReader[Option[String]] =
+      Reader(db => db.usernames.get(userId))
+
+    def checkPassword(username: String, password: String): DbReader[Boolean] =
+      Reader(db => db.passwords.get(username).contains(password))
+
+    def checkLogin(userId: Int, password: String): DbReader[Boolean] =
+      for {
+        username <- findUsername(userId)
+        validPassword <-
+          username
+            .map { username =>
+              checkPassword(username, password)
+            }
+            .getOrElse(false.pure[DbReader])
+      } yield validPassword
+
+  }
+
 }
