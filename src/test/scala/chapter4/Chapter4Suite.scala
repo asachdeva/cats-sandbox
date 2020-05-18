@@ -18,7 +18,7 @@ class Chapter4Suite extends munit.FunSuite {
     assert(Chapter4.foldRight2((1 to 100000 toList), 0L)(_ + _) == 5000050000L)
   }
 
-  test("4.7.3 WriterMonadTest") {
+  test("4.7.3 WriterMonadTests") {
     import scala.concurrent._
     import scala.concurrent.duration._
     import scala.concurrent.ExecutionContext.Implicits.global
@@ -53,7 +53,7 @@ class Chapter4Suite extends munit.FunSuite {
     )
   }
 
-  test("4.8.3 ReaderMonadtest") {
+  test("4.8.3 ReaderMonadTests") {
     import Chapter4.DbReader._
 
     val users = Map(
@@ -71,5 +71,18 @@ class Chapter4Suite extends munit.FunSuite {
 
     assert(checkLogin(1, "zerocool").run(db) == true)
     assert(checkLogin(2, "akshay").run(db) == false)
+  }
+
+  test("4.9.3 StateMonadTests") {
+    import Chapter4.PostOrderCalculator._
+
+    assert(evalOne("42").runA(Nil).value == 42)
+    assert(evalAll(List("1", "2", "+", "3", "*")).runA(Nil).value == 9)
+    assert(evalInput("1 2 + 3 *") == 9)
+
+    val caught = intercept[RuntimeException] {
+      evalInput("1 - 3")
+    }
+    assert(caught.getMessage() == "Fail!")
   }
 }
