@@ -1,4 +1,3 @@
 package chapter5
 
-class Chapter5Suite extends munit.FunSuite {
-}
+class Chapter5Suite extends munit.FunSuite {}

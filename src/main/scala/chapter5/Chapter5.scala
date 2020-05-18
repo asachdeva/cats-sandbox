@@ -1,4 +1,3 @@
 package chapter5
 
-object Chapter5 {
-}
+object Chapter5 {}
