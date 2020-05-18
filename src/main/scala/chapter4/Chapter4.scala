@@ -222,4 +222,32 @@ object Chapter4 {
 
   }
 
+  // Ex 4.10.1
+  sealed trait Tree[+A]
+  final case class Branch[A](left: Tree[A], right: Tree[A]) extends Tree[A]
+  final case class Leaf[A](value: A) extends Tree[A]
+
+  object TreeMonad {
+    def branch[A](left: Tree[A], right: Tree[A]): Tree[A] = Branch(left, right)
+
+    def leaf[A](value: A): Tree[A] =
+      Leaf(value)
+
+    implicit val treeMonad: cats.Monad[Tree] = new cats.Monad[Tree] {
+      def pure[A](x: A): Tree[A] = leaf(x)
+
+      def flatMap[A, B](fa: Tree[A])(f: A => Tree[B]): Tree[B] =
+        fa match {
+          case Branch(l, r) => Branch(flatMap(l)(f), flatMap(r)(f))
+          case Leaf(v)      => f(v)
+        }
+
+      def tailRecM[A, B](a: A)(f: A => Tree[Either[A, B]]): Tree[B] =
+        flatMap(f(a)) {
+          case Right(b) => leaf(b)
+          case Left(a)  => tailRecM(a)(f)
+        }
+    }
+  }
+
 }

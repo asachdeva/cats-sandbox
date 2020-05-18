@@ -85,4 +85,24 @@ class Chapter4Suite extends munit.FunSuite {
     }
     assert(caught.getMessage() == "Fail!")
   }
+
+  test("4.10.1 TreeMonadTests") {
+    import Chapter4.Tree
+    import Chapter4.TreeMonad._
+
+    assert(10.pure[Tree] == leaf(10))
+
+    val tree = branch(leaf(100), leaf(200)).flatMap(x => branch(leaf(x - 1), leaf(x + 1)))
+    assert(tree == branch(branch(leaf(99), leaf(101)), branch(leaf(199), leaf(201))))
+
+    val result =
+      20.tailRecM[Tree, String](a => if (a == 20) leaf(Right(a.toString())) else leaf(Left(a + 1)))
+
+    assert(result == leaf("20"))
+
+    val result2 =
+      10.tailRecM[Tree, String](a => if (a == 20) leaf(Right(a.toString())) else leaf(Left(a + 1)))
+
+    assert(result2 == leaf("20"))
+  }
 }
