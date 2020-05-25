@@ -26,5 +26,16 @@ object Chapter7 {
         if (f(item)) item :: accum else accum
       }
 
+    import scala.math.Numeric
+
+    def sumWithNumric[A](list: List[A])(implicit numeric: Numeric[A]): A =
+      list.foldRight(numeric.zero)(numeric.plus)
+
+    import cats._
+
+    def sumWithMonoid[A](list: List[A])(implicit m: Monoid[A]): A =
+      list.foldRight(m.empty)(m.combine)
   }
+
+  object Traversable {}
 }

@@ -1,9 +1,13 @@
 package chapter7
 
+import cats.Foldable
+
 class Chapter7Suite extends munit.FunSuite {
   test("Ex 7.1.1 + Ex 7.1.2 Foldable Tests") {
 
     import Chapter7.Foldable._
+    import cats.implicits._
+
     assert(show(Nil) == "nil")
     assert(show(List(1, 2, 3)) == "3 then 2 then 1 then nil")
 
@@ -16,6 +20,14 @@ class Chapter7Suite extends munit.FunSuite {
     assert(map(List(1, 2, 3))(_ * 2) == List(2, 4, 6))
     assert(flatMap(List(1, 2, 3))(a => List(a, a * 10, a * 100)) == List(1, 10, 100, 2, 20, 200, 3, 30, 300))
     assert(filter(List(1, 2, 3))(_ % 2 == 1) == List(1, 3))
+    assert(sumWithNumric(List(1, 2, 3)) == 6)
+    assert(sumWithMonoid(List(1, 2, 3)) == 6)
 
+    val temp = List(1, 2, 3)
+    assert(Foldable[List].foldLeft(temp, 0)(_ + _) == 6)
+    assert(Foldable[List].combineAll(temp) == 6)
+    assert(Foldable[List].foldMap(temp)(_.toString) == "123")
   }
+
+  test("Traverable Tests") {}
 }
