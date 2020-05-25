@@ -47,10 +47,12 @@ object Chapter6 {
 
     def nonBlank(name: String)(data: String): FailFast[String] =
       Right(data).ensure(List(s"$name cannot be blank"))(_.nonEmpty)
+
     def nonNegative(name: String)(data: Int): FailFast[Int] =
       Right(data).ensure(List(s"$name must be non-negative"))(_ >= 0)
 
     def readName(data: FormData): FailFast[String] = getValue("name")(data).flatMap(nonBlank("name"))
+
     def readAge(data: FormData): FailFast[Int] =
       getValue("age")(data).flatMap(nonBlank("age")).flatMap(parseInt("age")).flatMap(nonNegative("age"))
 
