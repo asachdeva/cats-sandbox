@@ -37,5 +37,42 @@ object Chapter7 {
       list.foldRight(m.empty)(m.combine)
   }
 
-  object Traversable {}
+  object Traversable {
+
+    import scala.concurrent._
+    import scala.concurrent.ExecutionContext.Implicits.global
+
+    val hostnames = List(
+      "alpha.example.com",
+      "beta.example.com",
+      "gamma.demo.com"
+    )
+
+    def getUptime(hostname: String): Future[Int] =
+      Future(hostname.length * 60)
+
+    val allUptimes: Future[List[Int]] =
+      hostnames.foldLeft(Future(List.empty[Int])) { (accum, host) =>
+        val uptime = getUptime(host)
+        for {
+          accum <- accum
+          uptime <- uptime
+        } yield accum :+ uptime
+      }
+
+    val allUptimesUsingTraverse: Future[List[Int]] =
+      Future.traverse(hostnames)(getUptime)
+
+    // Ex 7.2.2.1
+    import cats.implicits._
+    import cats._
+
+    def listTraverse[F[_]: Applicative, A, B](list: List[A])(func: A => F[B]): F[List[B]] =
+      list.foldLeft(List.empty[B].pure[F]) { (accum, item) =>
+        (accum, func(item)).mapN(_ :+ _)
+      }
+
+    def listSequence[F[_]: Applicative, B](list: List[F[B]]): F[List[B]] =
+      listTraverse(list)(identity)
+  }
 }

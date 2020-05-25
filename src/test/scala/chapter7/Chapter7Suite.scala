@@ -29,5 +29,17 @@ class Chapter7Suite extends munit.FunSuite {
     assert(Foldable[List].foldMap(temp)(_.toString) == "123")
   }
 
-  test("Traverable Tests") {}
+  test("Traverable Tests") {
+    import scala.concurrent._
+    import scala.concurrent.duration._
+
+    assert(
+      Await.result(Chapter7.Traversable.allUptimes, 1.second) == Await
+        .result(Chapter7.Traversable.allUptimesUsingTraverse, 1.second)
+    )
+
+    import Chapter7.Traversable._
+    import cats.implicits._
+    println(listSequence(List(Vector(1, 2), Vector(3, 4))))
+  }
 }
