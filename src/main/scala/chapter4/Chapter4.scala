@@ -73,9 +73,9 @@ object Chapter4 {
   // Eval
   import cats.Eval
 
-  val now = Eval.now(math.random + 1000)
-  val later = Eval.later(math.random + 1000)
-  val always = Eval.always(math.random + 1000)
+  val now = Eval.now(math.random() + 1000)
+  val later = Eval.later(math.random() + 1000)
+  val always = Eval.always(math.random() + 1000)
 
   def factorialStackSafe(n: BigInt): Eval[BigInt] =
     if (n == 1)

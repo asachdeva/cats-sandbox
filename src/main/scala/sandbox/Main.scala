@@ -449,7 +449,7 @@ object Main extends App {
 
   val future1 = {
     val r = new Random(0L)
-    val x = Future(r.nextInt)
+    val x = Future(r.nextInt())
     for {
       a <- x
       b <- x
@@ -459,8 +459,8 @@ object Main extends App {
   val future2 = {
     val r = new Random(0L)
     for {
-      a <- Future(r.nextInt)
-      b <- Future(r.nextInt)
+      a <- Future(r.nextInt())
+      b <- Future(r.nextInt())
     } yield (a, b)
   }
 
@@ -635,7 +635,7 @@ object Main extends App {
         else (a / b).asRight[String]
     } yield c * 100
 
-  println("DIV0 " + divZero)
+  println("DIV0 " + divZero())
 
   println(countPositive(List(1, 2, 3, 4)))
   println(countPositive(List(1, 2, -3, 4)))
@@ -673,9 +673,9 @@ object Main extends App {
   val e2 = monadError.raiseError("Badness")
 
   // Eval Monad
-  val now = Eval.now(math.random + 1000)
-  val later = Eval.later(math.random + 1000)
-  val always = Eval.always(math.random + 1000)
+  val now = Eval.now(math.random() + 1000)
+  val later = Eval.later(math.random() + 1000)
+  val always = Eval.always(math.random() + 1000)
 
   println(now.value)
   println(later.value)
