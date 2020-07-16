@@ -7,16 +7,16 @@ object Chapter1 {
   }
 
   object PrintableInstances {
-    implicit val stringPrintable: Printable[String] =
+    implicit val stringPrinatble: Printable[String] =
       new Printable[String] {
         def format(value: String): String =
           value
       }
 
-    implicit val intPrintable: Printable[Int] =
+    implicit val intPrinntable: Printable[Int] =
       new Printable[Int] {
         def format(value: Int): String =
-          value.toString
+          value.toString()
       }
   }
 
@@ -74,4 +74,25 @@ object Chapter1 {
   implicit val dateShow2: Show[Date] =
     Show.show(date => s"${date.getTime} ms since the epoch")
 
+  implicit val catShow: Show[Cat] =
+    Show.show(cat => s"${cat.name} is a ${cat.age} year-old ${cat.color} color cat.")
+
+  // VAriance
+  abstract class Animal {
+    def name: String
+  }
+
+  case class Lion(name: String) extends Animal
+  case class Puma(name: String) extends Animal
+
+  def printAnimalNames(animals: List[Animal]): Unit =
+    animals.foreach { animal =>
+      println(animal.name)
+    }
+
+  val lions: List[Lion] = List(Lion("foo"), Lion("bar"))
+  val pumas: List[Puma] = List(Puma("papa"), Puma("makai"))
+
+  printAnimalNames(lions)
+  printAnimalNames(pumas)
 }
