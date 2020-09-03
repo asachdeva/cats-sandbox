@@ -57,7 +57,7 @@ object Chapter2 {
     def add(items: List[Int]): Int =
       items.foldLeft(0)(_ + _)
 
-    import cats.implicits._
+    import cats.syntax.all._
 
     def add2[A](items: List[A])(implicit monoid: cats.Monoid[A]): A =
       items.foldLeft(monoid.empty)(_ |+| _)
@@ -75,7 +75,7 @@ object Chapter2 {
       }
   }
 
-  import cats.implicits._
+  import cats.syntax.all._
 
   cats.Monoid[String].combine("Hi", "There")
 

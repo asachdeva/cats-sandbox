@@ -10,7 +10,6 @@ object Chapter5 {
     import scala.concurrent.ExecutionContext.Implicits.global
     import scala.concurrent.Await
     import scala.concurrent.duration._
-    import cats.implicits._
 
     type Response[A] = EitherT[Future, String, A]
 

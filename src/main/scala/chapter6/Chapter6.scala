@@ -3,7 +3,7 @@ package chapter6
 object Chapter6 {
 
   import cats.Semigroupal
-  import cats.implicits._
+  import cats.syntax.all._
 
   Semigroupal[Option].product(Option(123), Option("abc"))
   (Option(123), Option("abc")).tupled

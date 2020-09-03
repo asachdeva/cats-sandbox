@@ -1,6 +1,6 @@
 package chapter3
 
-import cats.implicits._
+import cats.syntax.all._
 
 class Chapter3Suite extends munit.FunSuite {
   test("Ex 3.5.4 -- Tree Functor test") {
