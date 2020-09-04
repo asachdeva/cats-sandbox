@@ -1,7 +1,7 @@
 package sandbox
 
 import cats._
-import cats.implicits._
+import cats.syntax.all._
 
 object Main extends App {
   println("Hello " |+| "Cats!")

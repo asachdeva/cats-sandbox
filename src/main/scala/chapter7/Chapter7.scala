@@ -64,7 +64,7 @@ object Chapter7 {
       Future.traverse(hostnames)(getUptime)
 
     // Ex 7.2.2.1
-    import cats.implicits._
+    import cats.syntax.all._
     import cats._
 
     def listTraverse[F[_]: Applicative, A, B](list: List[A])(func: A => F[B]): F[List[B]] =

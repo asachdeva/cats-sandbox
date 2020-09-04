@@ -53,7 +53,7 @@ object Chapter1 {
   }
 
   import cats._
-  import cats.implicits._
+  import cats.syntax.all._
 
   val showInt: Show[Int] = Show.apply[Int]
   val showBoolean: Show[Boolean] = Show.apply[Boolean]

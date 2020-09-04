@@ -1,7 +1,7 @@
 package chapter4
 
 import Chapter4.MonadInstance._
-import cats.implicits._
+import cats.syntax.all._
 
 class Chapter4Suite extends munit.FunSuite {
   test("Monad test -- getting func-y") {

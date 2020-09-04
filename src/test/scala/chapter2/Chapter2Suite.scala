@@ -64,7 +64,6 @@ class Chapter2Suite extends munit.FunSuite {
   }
 
   test("Ex 2.5.4 -- SuperAdder test add3 test for ints Option[Int] and Orders") {
-    import cats.implicits._
 
     import SuperAdder._
 

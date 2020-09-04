@@ -6,7 +6,6 @@ class Chapter7Suite extends munit.FunSuite {
   test("Ex 7.1.1 + Ex 7.1.2 Foldable Tests") {
 
     import Chapter7.Foldable._
-    import cats.implicits._
 
     assert(show(Nil) == "nil")
     assert(show(List(1, 2, 3)) == "3 then 2 then 1 then nil")
@@ -39,7 +38,6 @@ class Chapter7Suite extends munit.FunSuite {
     )
 
     import Chapter7.Traversable._
-    import cats.implicits._
     println(listSequence(List(Vector(1, 2), Vector(3, 4))))
   }
 }

@@ -47,7 +47,7 @@ object Chapter4 {
     def apply[F[_]](implicit monad: Monad[F]) = monad
   }
 
-  import cats.implicits._
+  import cats.syntax.all._
 
   def sumSquares[F[_]: cats.Monad](a: F[Int], b: F[Int]): F[Int] =
     a.flatMap(x => b.map(y => x * x + y * y))

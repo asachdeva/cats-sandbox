@@ -1,7 +1,7 @@
 package chapter1
 
 import cats._
-import cats.implicits._
+import cats.syntax.all._
 
 import Chapter1.PrintableInstances._
 import Chapter1._
