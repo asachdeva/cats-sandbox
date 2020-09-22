@@ -143,7 +143,7 @@ object Chapter4 {
     for {
       greet <- greetKitty
       feed <- feedKitty
-    } yield (s"$greet $feed")
+    } yield s"$greet $feed"
 
   // Ex 4.8.3
   object DbReader {
