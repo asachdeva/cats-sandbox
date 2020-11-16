@@ -15,19 +15,21 @@ jobs:
     steps:
       - uses: "actions/checkout@v2.1.0"
       - uses: "olafurpg/setup-scala@v10"
-      - uses: "actions/cache@v1"
         with:
           java-version: openjdk@1.11.0
       - name: Cache Coursier dependencies
+        uses: "actions/cache@v1"
         with:
           path: ~/.cache/coursier
           key: ${{ runner.os }}-${{ github.ref }}-coursier
           restore-keys: |
             ${{ runner.os }}-${{ github.ref }}-coursier
       - name: "java ${{ matrix.java}} setup"
+        uses: "olafurpg/setup-java@v10"
         with:
           java-version: "${{ matrix.java}}"
       - name: Cache Ivy dependencies
+        uses: "actions/cache@v1"
         with:
           path: ~/.ivy2/cache
           key: ${{ runner.os }}-${{ github.ref }}-ivy2
