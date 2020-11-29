@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        scala: [2.13.3]
+        scala: [2.13.4]
         java:
           - '8.0.242'
           - '11.0.5'
