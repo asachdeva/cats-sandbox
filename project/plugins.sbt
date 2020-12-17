@@ -1,2 +1,2 @@
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.4.2")
-addSbtPlugin("org.scalameta" % "sbt-munit" % "0.7.19")
+addSbtPlugin("org.scalameta" % "sbt-munit" % "0.7.20")
