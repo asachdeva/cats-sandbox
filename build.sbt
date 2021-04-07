@@ -34,6 +34,7 @@ lazy val root = (project in file("."))
       "org.typelevel" %% "cats-effect" % CatsEffectVersion
     ),
     addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
+    scalafmtOnCompile := true,
     testFrameworks := List(new TestFramework("munit.Framework")),
     format := {
       Command.process("scalafmtAll", state.value)
