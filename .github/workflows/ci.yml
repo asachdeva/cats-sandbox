@@ -8,10 +8,9 @@ jobs:
 
     strategy:
       matrix:
-        scala: [2.13.5]
         java:
-          - '8.0.242'
-          - '11.0.5'
+          - jdk11
+          - jdk15
     steps:
       - uses: "actions/checkout@v2.1.0"
       - uses: "olafurpg/setup-scala@v10"
