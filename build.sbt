@@ -6,7 +6,7 @@ val format = taskKey[Unit]("Format files using scalafmt and scalafix")
 val CatsEffectVersion = "3.2.1"
 val CatsVersion = "2.6.1"
 val LogbackVersion = "1.2.5"
-val MunitVersion = "0.7.26"
+val MunitVersion = "0.7.28"
 
 val MUnitFramework = new TestFramework("munit.Framework")
 
