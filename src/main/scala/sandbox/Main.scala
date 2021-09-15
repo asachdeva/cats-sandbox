@@ -399,7 +399,7 @@ object Main extends App {
   println(func2(func1(1)))
 
   val func =
-    ((x: Int) => x.toDouble).map(x => x + 1).map(x => x * 2).map(x => s"${x}!")
+    ((x: Int) => x.toDouble).map(x => x + 1).map(x => x * 2).map(x => s"$x!")
   println("Akshay value of func is " + func(123))
 
   //trait Functor[F[_]] {
@@ -754,7 +754,7 @@ object Main extends App {
   val catName: Reader[Cat2, String] =
     Reader(cat => cat.name)
   val greetKitty: Reader[Cat2, String] =
-    catName.map(name => s"Hello ${name}")
+    catName.map(name => s"Hello $name")
   val feedKitty: Reader[Cat2, String] =
     Reader(cat => s"Have a nice bowl of ${cat.favoriteFood}")
   val greetAndFeed: Reader[Cat2, String] =
