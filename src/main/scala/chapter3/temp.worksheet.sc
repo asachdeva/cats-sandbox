@@ -8,12 +8,12 @@ import cats.implicits._
 
 -1.asRight[String].ensure("Must be non-negative!")(_ > 0)
 
-"error".asLeft[Int].recover {
-  case _: String => -1
+"error".asLeft[Int].recover { case _: String =>
+  -1
 }
 
-"error".asLeft[Int].recoverWith {
-  case _: String => -1.asRight
+"error".asLeft[Int].recoverWith { case _: String =>
+  -1.asRight
 }
 
 "foo".asLeft[Int].leftMap(_.reverse)
