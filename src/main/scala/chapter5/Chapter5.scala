@@ -2,7 +2,7 @@ package chapter5
 
 object Chapter5 {
 
-  //Ex 5.4
+  // Ex 5.4
   object AutoBots {
 
     import cats.data.EitherT

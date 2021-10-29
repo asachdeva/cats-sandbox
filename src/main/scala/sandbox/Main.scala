@@ -28,7 +28,7 @@ object Main extends App {
 
   final case class Person(name: String, email: String)
 
-  //final case class Person(name: String, email: String)
+  // final case class Person(name: String, email: String)
 
   object JsonWriterInstances {
     implicit val stringWriter: JsonWriter[String] =
@@ -402,9 +402,9 @@ object Main extends App {
     ((x: Int) => x.toDouble).map(x => x + 1).map(x => x * 2).map(x => s"$x!")
   println("Akshay value of func is " + func(123))
 
-  //trait Functor[F[_]] {
-  //def map[A, B](fa: F[A])(f: A => B): F[B]
-  //}
+  // trait Functor[F[_]] {
+  // def map[A, B](fa: F[A])(f: A => B): F[B]
+  // }
 
   val list1 = List(1, 2, 3)
   val list2 = Functor[List].map(list1)(_ * 2)
@@ -710,8 +710,8 @@ object Main extends App {
     else
       Eval.defer(factorial2(n - 1).map(_ * n))
 
-  //println(factorial(50000))
-  //println(factorial2(50000).value)
+  // println(factorial(50000))
+  // println(factorial2(50000).value)
 
   // Writer Monad allows us to carry along a log
   // along with the computation
