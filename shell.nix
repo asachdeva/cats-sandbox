@@ -1,11 +1,11 @@
-{ jdk ? "jdk15" }:
+{ jdk ? "jdk17" }:
 
 let
-  java = pkgs.${jdk};
-
   config = {
-    packageOverrides = pkgs: rec {
-      sbt = pkgs.sbt.overrideAttrs (
+    packageOverrides = p: rec {
+      java = p.${jdk};
+
+      sbt = p.sbt.overrideAttrs (
         old: rec {
           patchPhase = ''
             echo -java-home ${java} >> conf/sbtopts
@@ -16,9 +16,9 @@ let
   };
 
   nixpkgs = fetchTarball {
-    name   = "nixos-unstable-2021-02-21";
-    url    = "https://github.com/NixOS/nixpkgs/archive/9816b99e71c.tar.gz";
-    sha256 = "1dpz36i3vx0c1wmacrki0wsf30if8xq3bnj71g89rsbxyi87lhcm";
+    name   = "nixos-unstable-2021-10-27";
+    url    = "https://github.com/NixOS/nixpkgs/archive/a4bf44345706.tar.gz";
+    sha256 = "0zag9yfqsf544vrfccfvn5yjagizqf69adza8fpmsmn5ll8jw8gw";
   };
 
   pkgs = import nixpkgs { inherit config; };
@@ -26,9 +26,10 @@ in
 pkgs.mkShell {
   name = "scala-shell";
 
-  buildInputs = with pkgs; [
-    gnupg
-    java
-    sbt
+  buildInputs = [
+    pkgs.coursier
+    pkgs.gnupg
+    pkgs.${jdk}
+    pkgs.sbt
   ];
 }
