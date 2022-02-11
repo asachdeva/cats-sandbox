@@ -1,25 +1,29 @@
 name: Build
 
-on: [push, pull_request]
+on:
+  pull_request: {}
+  push:
+    branches:
+      - master
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
+    name: Build
+    runs-on: ubuntu-18.04
     strategy:
       matrix:
         java:
           - jdk11
-          - jdk15
+          - jdk17
     steps:
-      - uses: "actions/checkout@v2.3.2"
-      
+      - uses: actions/checkout@v2.3.2
+
       - name: "Cache for sbt & coursier ♨️"
         uses: coursier/cache-action@v4.1
 
       - name: "Install Nix ❄️"
         uses: cachix/install-nix-action@v12
-        
+
       - name: "Run with ${{ matrix.java }} 🚀"
         run: nix-shell --argstr jdk "${{ matrix.java }}" --run "sbt buildCatsSandbox"
         
