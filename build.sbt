@@ -3,7 +3,7 @@ version := "0.0.1-SNAPSHOT"
 
 val format = taskKey[Unit]("Format files using scalafmt and scalafix")
 
-val CatsEffectVersion = "3.3.5"
+val CatsEffectVersion = "3.3.6"
 val CatsVersion = "2.7.0"
 val LogbackVersion = "1.2.10"
 val MunitVersion = "0.7.29"
