@@ -8,7 +8,7 @@ class Chapter2Suite extends munit.FunSuite {
   val setValues = List(Set(1, 2, 3), Set(3, 4, 5), Set(4, 5, 6))
 
   def identityLaw[A](x: A)(implicit m: Monoid[A]): Boolean =
-    (m.combine(x, m.empty) == x) && (m.combine(m.empty, x) == x)
+    m.combine(x, m.empty) == x && m.combine(m.empty, x) == x
 
   def associativeLaw[A](x: A, y: A, z: A)(implicit m: Monoid[A]): Boolean =
     m.combine(x, m.combine(y, z)) == m.combine(m.combine(x, y), z)

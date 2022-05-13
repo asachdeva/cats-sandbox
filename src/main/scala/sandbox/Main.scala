@@ -204,7 +204,7 @@ object Main extends App {
         s"${date.getTime}ms since the epoch"
     }
 
-  val date = new Date()
+  val date = new Date
   println(date.show)
 
   // Cats -- Eq Type class
@@ -291,7 +291,7 @@ object Main extends App {
   implicit val booleanEitherMonoid: Monoid[Boolean] =
     new Monoid[Boolean] {
       def combine(x: Boolean, y: Boolean) =
-        (!x && y) || (x && !y)
+        !x && y || x && !y
       def empty = false
     }
 
@@ -590,7 +590,7 @@ object Main extends App {
   println(opt3)
 
   val lista = Monad[List].pure(3)
-  val listb = Monad[List].flatMap(List(1, 2, 3))(a => (List(a, a * 10)))
+  val listb = Monad[List].flatMap(List(1, 2, 3))(a => List(a, a * 10))
   println(listb)
   val listc = Monad[List].map(List(1, 2, 3))(a => a + 123)
   println(listc)

@@ -25,7 +25,7 @@ object Chapter5 {
       for {
         power1 <- getPowerLevel(ally1)
         power2 <- getPowerLevel(ally2)
-      } yield (power1 + power2) > 15
+      } yield power1 + power2 > 15
 
     def tacticalReport(ally1: String, ally2: String): String = {
       val stack = canSpecialMove(ally1, ally2).value
