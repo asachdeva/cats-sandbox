@@ -28,7 +28,7 @@ object Chapter2 {
 
     implicit val booleanEitherMonoid: Monoid[Boolean] = new Monoid[Boolean] {
       def empty: Boolean = false
-      def combine(a: Boolean, b: Boolean) = (a && !b) || (!a && b)
+      def combine(a: Boolean, b: Boolean) = a && !b || !a && b
     }
 
     implicit val booleanXnorMonoid: Monoid[Boolean] = new Monoid[Boolean] {
@@ -48,7 +48,7 @@ object Chapter2 {
     implicit def symDiffMonoid[A]: Monoid[Set[A]] =
       new Monoid[Set[A]] {
         def empty: Set[A] = Set.empty
-        def combine(set1: Set[A], set2: Set[A]): Set[A] = (set1.diff(set2)).union(set2.diff(set1))
+        def combine(set1: Set[A], set2: Set[A]): Set[A] = set1.diff(set2).union(set2.diff(set1))
       }
   }
 
