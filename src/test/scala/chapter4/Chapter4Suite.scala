@@ -15,7 +15,7 @@ class Chapter4Suite extends munit.FunSuite {
   }
 
   test("4.6.5 FoldRightEvalTest") {
-    assert(Chapter4.foldRight2((1 to 100000 toList), 0L)(_ + _) == 5000050000L)
+    assert(Chapter4.foldRight2(1 to 100000 toList, 0L)(_ + _) == 5000050000L)
   }
 
   test("4.7.3 WriterMonadTests") {
