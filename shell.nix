@@ -1,18 +1,18 @@
 { jdk ? "jdk17" }:
 
 let
-  config = {
-    packageOverrides = p: rec {
-      java = p.${jdk};
+  java = pkgs.${jdk};
 
-      sbt = p.sbt.overrideAttrs (
-        old: rec {
-          patchPhase = ''
-            echo -java-home ${java} >> conf/sbtopts
-          '';
-        }
-      );
-    };
+  config = {
+      packageOverrides = pkgs: rec {
+        sbt = pkgs.sbt.overrideAttrs (
+          old: rec {
+            patchPhase = ''
+              echo -java-home ${java} >> conf/sbtopts
+            '';
+          }
+        );
+      };
   };
 
   nixpkgs = fetchTarball {
@@ -26,10 +26,10 @@ in
 pkgs.mkShell {
   name = "scala-shell";
 
-  buildInputs = [
-    pkgs.coursier
-    pkgs.gnupg
-    pkgs.${jdk}
-    pkgs.sbt
+  buildInputs = with pkgs; [
+    coursier
+    gnupg
+    java
+    sbt
   ];
 }
