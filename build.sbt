@@ -26,7 +26,7 @@ lazy val root = (project in file("."))
     organization := "asachdeva",
     name := "cats-sandbox",
     version := "0.0.1-SNAPSHOT",
-    scalaVersion := "2.13.10",
+    scalaVersion := "2.13.13",
     libraryDependencies ++= Seq(
       "ch.qos.logback" % "logback-classic" % LogbackVersion,
       "org.scalameta" %% "munit" % MunitVersion % Test,
